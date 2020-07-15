@@ -27,8 +27,7 @@ namespace PollyRefitSample.ViewModels
             {
 
                 var pokemonsAPI = await _pokemonService.GetPokemonsAsync();
-
-
+                
                 Pokemons.Clear();
 
                 foreach (var pokemon in pokemonsAPI)
