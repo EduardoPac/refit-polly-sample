@@ -12,8 +12,11 @@
     <ItemGroup>
         <PackageReference Include="Polly" Version="7.2.1" />
         <PackageReference Include="Refit" Version="5.1.67" />
+        <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
+        <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
         <PackageReference Include="Xamarin.Forms" Version="4.7.0.1080" />
         <PackageReference Include="Xamarin.Forms.ConvertersPack" Version="1.0.0" />
+        <PackageReference Include="Xamarin.Forms.Extended.InfiniteScrolling" Version="1.0.0-preview2" />
     </ItemGroup>
 
     <ItemGroup>
