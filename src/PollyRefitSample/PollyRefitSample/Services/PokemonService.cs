@@ -12,12 +12,12 @@ namespace PollyRefitSample.Services
 
     public class PokemonService : IPokemonService
     {
-        readonly INetworkService _networkService;
+        readonly IPollyService _pollyService;
         private readonly IApiService _apiService; 
 
         public PokemonService()
         {
-            _networkService = new NetworkService();
+            _pollyService = new PollyService();
             _apiService = new ApiService();
         }
 
