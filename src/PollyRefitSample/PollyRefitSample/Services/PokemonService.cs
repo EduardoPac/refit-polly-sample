@@ -12,12 +12,10 @@ namespace PollyRefitSample.Services
 
     public class PokemonService : IPokemonService
     {
-        readonly INetworkService _networkService;
         private readonly IApiService _apiService; 
 
         public PokemonService()
         {
-            _networkService = new NetworkService();
             _apiService = new ApiService();
         }
 
@@ -25,7 +23,7 @@ namespace PollyRefitSample.Services
         {
             var pokemons = new List<Pokemon>();
 
-            for (var i = 1; i < 20; i++)
+            for (var i = 1; i < 100; i++)
             {
                 pokemons.Add(await _apiService.GetPokemon(i));
             }
