@@ -23,7 +23,7 @@ namespace PollyRefitSample.Services
         
         public ApiService()
         {
-            _pokemonFunctions = RestService.For<IPokemonFunctions>("https://pokeapi.co/api/v2");
+            _pokemonFunctions = RestService.For<IPokemonFunctions>("https://pokeapi.co/api/v3");
             _pollyService = new PollyService();
         }
 
@@ -33,7 +33,7 @@ namespace PollyRefitSample.Services
             {
                 var func = new Func<Task<Pokemon>>(() => _pokemonFunctions.GetPokemon(id));
                 
-                return await _pollyService.Retry<Pokemon>(func, 3);
+                return await _pollyService.CircuitBreaker<Pokemon>(func, 3, 3);
             }
             catch (Exception e)
             {
